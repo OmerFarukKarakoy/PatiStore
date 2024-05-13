@@ -3,7 +3,7 @@ import { SafeAreaView, Text, StyleSheet, FlatList, Image, Dimensions, TextInput,
 import product_data from './product_data.json';
 import Product from './components/Product.js'
 function App() {
-    const renderProduct = ({ item }: { item: any }) => <Product products={item} />;
+    const renderProduct = ({ item }: { item: any }) => <Product product={item} />;
     const [text, onChangeText] = React.useState('Ara...') ;
     return (
         <SafeAreaView style={styles.container}>
@@ -61,4 +61,3 @@ const styles = StyleSheet.create({
 
 })
 export default App;
-
