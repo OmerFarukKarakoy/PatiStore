@@ -1,10 +1,9 @@
 import React from 'react';
 import { SafeAreaView, Text, StyleSheet, FlatList, Image, Dimensions, TextInput, ImageBackground } from 'react-native';
-import news_data from './news_data.json';
-import NewsCards from './components/NewsCard';
-
+import product_data from './product_data.json';
+import Product from './components/Product.js'
 function App() {
-    const renderNews = ({ item }: { item: any }) => <NewsCards news={item} />;
+    const renderProduct = ({ item }: { item: any }) => <Product products={item} />;
     const [text, onChangeText] = React.useState('Ara...') ;
     return (
         <SafeAreaView style={styles.container}>
@@ -17,8 +16,8 @@ function App() {
             />
             <FlatList
                keyExtractor={(item) => item.u_id.toString()}
-                data={news_data}
-                renderItem={renderNews}
+                data={product_data}
+                renderItem={renderProduct}
                 numColumns={2}
 
             />
@@ -62,3 +61,4 @@ const styles = StyleSheet.create({
 
 })
 export default App;
+
